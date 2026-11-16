@@ -15,11 +15,16 @@ h1{font-size:clamp(28px,5vw,44px);line-height:1.1;margin:0 0 10px}h1 em{font-sty
 .content-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:14px}.bars{height:170px;display:flex;align-items:end;gap:12px;padding:18px 5px 0;border-bottom:1px solid var(--line)}.bar-col{height:100%;flex:1;display:flex;flex-direction:column;justify-content:end;align-items:center;gap:8px}.bar{width:min(32px,75%);height:var(--h);min-height:8px;border-radius:7px 7px 2px 2px;background:linear-gradient(180deg,var(--bar-top,#56e0dc),var(--bar-bottom,#4775bd));box-shadow:0 0 17px color-mix(in srgb,var(--bar-top,#56e0dc) 35%,transparent);transform-origin:bottom;animation:bar-grow .9s cubic-bezier(.2,.8,.2,1) both;transition:filter .2s ease}.bar:hover{filter:brightness(1.35)}.bar-col:nth-child(2n) .bar{--bar-top:#a78bfa;--bar-bottom:#6554bd}.bar-col:nth-child(3n) .bar{--bar-top:#ffb36b;--bar-bottom:#d66b8c}.bar-col:nth-child(4n) .bar{--bar-top:#61e6a8;--bar-bottom:#278e9c}.bar-col:nth-child(2) .bar{animation-delay:.08s}.bar-col:nth-child(3) .bar{animation-delay:.16s}.bar-col:nth-child(4) .bar{animation-delay:.24s}.bar-col:nth-child(5) .bar{animation-delay:.32s}.bar-col:nth-child(6) .bar{animation-delay:.4s}.bar-col:nth-child(7) .bar{animation-delay:.48s}.bar-col small{color:var(--muted);font-size:11px}
 .ring-wrap{display:flex;align-items:center;justify-content:center;gap:22px;min-height:170px}.ring{width:125px;height:125px;border-radius:50%;background:conic-gradient(#56e0dc 0 24%,#8b83ff 24% 50%,#f28bc4 50% 72%,#26344b 72%);display:grid;place-items:center;filter:drop-shadow(0 0 13px #9d8cff45);animation:ring-appear 1.2s ease both}.ring:before{content:"";width:91px;height:91px;border-radius:50%;background:#111c2d;grid-area:1/1}.ring strong{grid-area:1/1;z-index:1;font-size:23px}.legend{color:var(--muted);font-size:12px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#56e0dc,#a78bfa);margin-right:7px;box-shadow:0 0 10px #9d8cff88}
 .tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 1px 14px;margin:0 0 12px;scrollbar-width:thin}
+.tabs{position:sticky;top:0;z-index:5;background:linear-gradient(180deg,#080d18 82%,#080d1800);padding-top:10px}
+.tab:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 .tab{flex:0 0 auto;background:#101a2b;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:9px 15px;font-size:13px;transition:all .2s ease}
 .tab:hover{color:var(--text);border-color:#52708f}
 .tab.active{background:linear-gradient(120deg,#56e0dc,#8b83ff);color:#07131b;border-color:transparent;box-shadow:0 0 18px #56e0dc30}
 .tab-page{display:none;animation:rise-in .35s ease both}.tab-page.active{display:block}
-.form{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px}input,select{min-width:0;width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:#0a1321;color:var(--text);font:inherit}button{border:0;border-radius:10px;padding:11px 16px;background:var(--cyan);color:#07131b;font-weight:750;font:inherit;cursor:pointer}button:hover{filter:brightness(1.08)}
+.form{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px}
+.entry-panel{margin-bottom:18px}.entry-feedback{margin-top:12px;min-height:18px}
+.entry-remove{padding:5px 9px;font-size:11px;background:#26344b;color:#dce8f7;border:1px solid #40516a}
+.entry-remove:hover{background:#513044}input,select{min-width:0;width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:#0a1321;color:var(--text);font:inherit}button{border:0;border-radius:10px;padding:11px 16px;background:var(--cyan);color:#07131b;font-weight:750;font:inherit;cursor:pointer}button:hover{filter:brightness(1.08)}
 table{width:100%;border-collapse:collapse;margin-top:14px}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);font-size:13px}th{color:var(--muted);font-weight:500}
 .note{margin-top:22px;padding:13px 15px;border:1px solid #665b38;background:#241f13;border-radius:12px;color:#e6d7a9;font-size:12px}
 footer{color:var(--muted);font-size:11px;margin-top:26px;text-align:center}.top,.section-head,h1,.intro{animation:rise-in .65s both}.section-head{animation-delay:.12s}tbody tr{animation:rise-in .3s ease both}@keyframes rise-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes bar-grow{from{transform:scaleY(.08);opacity:.35}to{transform:scaleY(1);opacity:1}}@keyframes ring-appear{from{transform:scale(.82) rotate(-35deg);opacity:.3}to{transform:scale(1) rotate(0);opacity:1}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
@@ -76,6 +81,18 @@ footer{color:var(--muted);font-size:11px;margin-top:26px;text-align:center}.top,
 </div>
 <div class="section-head"><h2>ACTIVITÉ SUR LA SEMAINE</h2></div>
 <article class="panel"><div class="bars"><div class="bar-col"><div class="bar" style="--h:42%"></div><small>Lun</small></div><div class="bar-col"><div class="bar" style="--h:75%"></div><small>Mar</small></div><div class="bar-col"><div class="bar" style="--h:30%"></div><small>Mer</small></div><div class="bar-col"><div class="bar" style="--h:88%"></div><small>Jeu</small></div><div class="bar-col"><div class="bar" style="--h:55%"></div><small>Ven</small></div><div class="bar-col"><div class="bar" style="--h:22%"></div><small>Sam</small></div><div class="bar-col"><div class="bar" style="--h:66%"></div><small>Dim</small></div></div></article>
+
+<div class="section-head"><h2>AJOUTER UNE DONNÉE TEST</h2><span class="muted">Session temporaire</span></div>
+<article class="panel entry-panel">
+<form class="domain-form form" data-domain="sport">
+<input name="label" type="text" maxlength="32" placeholder="Ex. Marche" aria-label="Nom de l'indicateur" required>
+<input name="value" type="number" min="0" step="any" placeholder="Valeur" aria-label="Valeur fictive" required>
+<input name="unit" type="text" maxlength="16" placeholder="Unité (ex. min)" aria-label="Unité" required>
+<button type="submit">Ajouter</button>
+</form>
+<div class="entry-feedback muted" role="status" aria-live="polite">Tes entrées de démonstration apparaîtront ici.</div>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Unité</th><th></th></tr></thead><tbody class="domain-entries"></tbody></table>
+</article>
 </section>
 <section id="tab-sleep" class="tab-page">
 <div class="section-head"><h2>SOMMEIL</h2><span class="muted">Données fictives · Démo</span></div>
@@ -87,6 +104,18 @@ footer{color:var(--muted);font-size:11px;margin-top:26px;text-align:center}.top,
 </div>
 <div class="section-head"><h2>DURÉE PAR NUIT</h2></div>
 <article class="panel"><div class="bars"><div class="bar-col"><div class="bar" style="--h:70%"></div><small>Lun</small></div><div class="bar-col"><div class="bar" style="--h:82%"></div><small>Mar</small></div><div class="bar-col"><div class="bar" style="--h:76%"></div><small>Mer</small></div><div class="bar-col"><div class="bar" style="--h:90%"></div><small>Jeu</small></div><div class="bar-col"><div class="bar" style="--h:78%"></div><small>Ven</small></div><div class="bar-col"><div class="bar" style="--h:60%"></div><small>Sam</small></div><div class="bar-col"><div class="bar" style="--h:85%"></div><small>Dim</small></div></div></article>
+
+<div class="section-head"><h2>AJOUTER UNE DONNÉE TEST</h2><span class="muted">Session temporaire</span></div>
+<article class="panel entry-panel">
+<form class="domain-form form" data-domain="sleep">
+<input name="label" type="text" maxlength="32" placeholder="Ex. Durée" aria-label="Nom de l'indicateur" required>
+<input name="value" type="number" min="0" step="any" placeholder="Valeur" aria-label="Valeur fictive" required>
+<input name="unit" type="text" maxlength="16" placeholder="Unité (ex. min)" aria-label="Unité" required>
+<button type="submit">Ajouter</button>
+</form>
+<div class="entry-feedback muted" role="status" aria-live="polite">Tes entrées de démonstration apparaîtront ici.</div>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Unité</th><th></th></tr></thead><tbody class="domain-entries"></tbody></table>
+</article>
 </section>
 <section id="tab-food" class="tab-page">
 <div class="section-head"><h2>ALIMENTATION</h2><span class="muted">Suivi descriptif · Démo</span></div>
@@ -97,6 +126,18 @@ footer{color:var(--muted);font-size:11px;margin-top:26px;text-align:center}.top,
 <article class="panel"><div class="metric-label">Notes personnelles</div><div class="metric">2</div><div class="trend">Exemple de donnée</div></article>
 </div>
 <article class="panel" style="margin-top:14px"><div class="metric-label">Journal alimentaire fictif</div><p class="muted">Petit-déjeuner · Déjeuner · Dîner — exemples de catégories, sans objectif calorique.</p></article>
+
+<div class="section-head"><h2>AJOUTER UNE DONNÉE TEST</h2><span class="muted">Session temporaire</span></div>
+<article class="panel entry-panel">
+<form class="domain-form form" data-domain="food">
+<input name="label" type="text" maxlength="32" placeholder="Ex. Repas noté" aria-label="Nom de l'indicateur" required>
+<input name="value" type="number" min="0" step="any" placeholder="Valeur" aria-label="Valeur fictive" required>
+<input name="unit" type="text" maxlength="16" placeholder="Unité (ex. min)" aria-label="Unité" required>
+<button type="submit">Ajouter</button>
+</form>
+<div class="entry-feedback muted" role="status" aria-live="polite">Tes entrées de démonstration apparaîtront ici.</div>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Unité</th><th></th></tr></thead><tbody class="domain-entries"></tbody></table>
+</article>
 </section>
 <section id="tab-school" class="tab-page">
 <div class="section-head"><h2>ÉTUDES & APPRENTISSAGE</h2><span class="muted">Données fictives · Démo</span></div>
@@ -108,6 +149,18 @@ footer{color:var(--muted);font-size:11px;margin-top:26px;text-align:center}.top,
 </div>
 <div class="section-head"><h2>RÉPARTITION DES SESSIONS</h2></div>
 <article class="panel"><div class="bars"><div class="bar-col"><div class="bar" style="--h:60%"></div><small>Lun</small></div><div class="bar-col"><div class="bar" style="--h:35%"></div><small>Mar</small></div><div class="bar-col"><div class="bar" style="--h:85%"></div><small>Mer</small></div><div class="bar-col"><div class="bar" style="--h:48%"></div><small>Jeu</small></div><div class="bar-col"><div class="bar" style="--h:72%"></div><small>Ven</small></div><div class="bar-col"><div class="bar" style="--h:25%"></div><small>Sam</small></div><div class="bar-col"><div class="bar" style="--h:55%"></div><small>Dim</small></div></div></article>
+
+<div class="section-head"><h2>AJOUTER UNE DONNÉE TEST</h2><span class="muted">Session temporaire</span></div>
+<article class="panel entry-panel">
+<form class="domain-form form" data-domain="school">
+<input name="label" type="text" maxlength="32" placeholder="Ex. Révision" aria-label="Nom de l'indicateur" required>
+<input name="value" type="number" min="0" step="any" placeholder="Valeur" aria-label="Valeur fictive" required>
+<input name="unit" type="text" maxlength="16" placeholder="Unité (ex. min)" aria-label="Unité" required>
+<button type="submit">Ajouter</button>
+</form>
+<div class="entry-feedback muted" role="status" aria-live="polite">Tes entrées de démonstration apparaîtront ici.</div>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Unité</th><th></th></tr></thead><tbody class="domain-entries"></tbody></table>
+</article>
 </section>
 <section id="tab-productivity" class="tab-page">
 <div class="section-head"><h2>PRODUCTIVITÉ & LOISIRS</h2><span class="muted">Données fictives · Démo</span></div>
@@ -119,15 +172,56 @@ footer{color:var(--muted);font-size:11px;margin-top:26px;text-align:center}.top,
 </div>
 <div class="section-head"><h2>RÉPARTITION DU TEMPS</h2></div>
 <article class="panel"><div class="ring-wrap"><div class="ring"><strong>72%</strong></div><div class="legend"><div><span class="dot"></span>Activités illustratives</div><div style="margin-top:8px">Répartition fictive</div></div></div></article>
+
+<div class="section-head"><h2>AJOUTER UNE DONNÉE TEST</h2><span class="muted">Session temporaire</span></div>
+<article class="panel entry-panel">
+<form class="domain-form form" data-domain="productivity">
+<input name="label" type="text" maxlength="32" placeholder="Ex. Lecture" aria-label="Nom de l'indicateur" required>
+<input name="value" type="number" min="0" step="any" placeholder="Valeur" aria-label="Valeur fictive" required>
+<input name="unit" type="text" maxlength="16" placeholder="Unité (ex. min)" aria-label="Unité" required>
+<button type="submit">Ajouter</button>
+</form>
+<div class="entry-feedback muted" role="status" aria-live="polite">Tes entrées de démonstration apparaîtront ici.</div>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Unité</th><th></th></tr></thead><tbody class="domain-entries"></tbody></table>
+</article>
 </section>
 <footer>LIFETRACK · Prototype en construction</footer>
 </main>
 <script>
 document.querySelectorAll('.tab').forEach(button=>{
+ button.setAttribute('aria-pressed',button.classList.contains('active')?'true':'false');
  button.addEventListener('click',()=>{
   const target=button.dataset.tab;
-  document.querySelectorAll('.tab').forEach(item=>item.classList.toggle('active',item===button));
+  document.querySelectorAll('.tab').forEach(item=>{
+   const active=item===button;
+   item.classList.toggle('active',active);
+   item.setAttribute('aria-pressed',active?'true':'false');
+  });
   document.querySelectorAll('.tab-page').forEach(page=>page.classList.toggle('active',page.id==='tab-'+target));
+ });
+});
+document.querySelectorAll('.domain-form').forEach(form=>{
+ form.addEventListener('submit',event=>{
+  event.preventDefault();
+  const label=form.elements.label.value.trim();
+  const value=form.elements.value.value;
+  const unit=form.elements.unit.value.trim();
+  if(!label||value===''||Number(value)<0||!unit)return;
+  const body=form.parentElement.querySelector('.domain-entries');
+  const row=document.createElement('tr');
+  [label,value,unit].forEach(text=>{
+   const cell=document.createElement('td');
+   cell.textContent=text;
+   row.appendChild(cell);
+  });
+  const action=document.createElement('td');
+  const remove=document.createElement('button');
+  remove.type='button';remove.className='entry-remove';remove.textContent='Retirer';
+  remove.setAttribute('aria-label','Retirer cette entrée');
+  remove.addEventListener('click',()=>row.remove());
+  action.appendChild(remove);row.appendChild(action);body.appendChild(row);
+  form.parentElement.querySelector('.entry-feedback').textContent='Entrée ajoutée à cette session. Elle disparaîtra au rechargement.';
+  form.reset();
  });
 });
 document.getElementById('entry-form').addEventListener('submit',function(e){
