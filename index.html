@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080d18">
+<title>LIFETRACK — Your life, in data.</title>
+<style>
+:root{color-scheme:dark;--bg:#080d18;--panel:#101a2b;--line:#21314a;--muted:#8ea1bd;--text:#edf4ff;--cyan:#56e0dc;--violet:#9d8cff;--green:#8be0ae}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#142a42 0,transparent 42%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,Arial,sans-serif}
+.wrap{max-width:1180px;margin:auto;padding:28px 22px 60px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:34px}.brand{font-size:22px;font-weight:800;letter-spacing:3px}.brand span{color:var(--cyan)}.tag{color:var(--muted);font-size:12px;letter-spacing:1.5px}.pill{border:1px solid #31516a;border-radius:99px;padding:7px 12px;color:var(--cyan);font-size:12px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.1;margin:0 0 10px}h1 em{font-style:normal;color:var(--cyan)}.intro{color:var(--muted);margin:0 0 28px}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin:28px 0 14px}.section-head h2{font-size:16px;margin:0;letter-spacing:.5px}.muted{color:var(--muted);font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.panel{background:linear-gradient(145deg,#142238,#0e1726);border:1px solid var(--line);border-radius:17px;padding:18px;box-shadow:0 12px 34px #0002}.metric-label{color:var(--muted);font-size:13px}.metric{font-size:30px;font-weight:750;margin:7px 0 2px}.unit{font-size:13px;color:var(--muted);font-weight:500}.trend{font-size:12px;color:var(--green)}
+.content-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:14px}.bars{height:170px;display:flex;align-items:end;gap:12px;padding:18px 5px 0;border-bottom:1px solid var(--line)}.bar-col{height:100%;flex:1;display:flex;flex-direction:column;justify-content:end;align-items:center;gap:8px}.bar{width:min(32px,75%);height:var(--h);min-height:8px;border-radius:7px 7px 2px 2px;background:linear-gradient(180deg,var(--cyan),#4775bd)}.bar-col small{color:var(--muted);font-size:11px}
+.ring-wrap{display:flex;align-items:center;justify-content:center;gap:22px;min-height:170px}.ring{width:125px;height:125px;border-radius:50%;background:conic-gradient(var(--violet) 0 72%,#26344b 72%);display:grid;place-items:center}.ring:before{content:"";width:91px;height:91px;border-radius:50%;background:#111c2d;grid-area:1/1}.ring strong{grid-area:1/1;z-index:1;font-size:23px}.legend{color:var(--muted);font-size:12px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--violet);margin-right:7px}
+.form{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px}input,select{min-width:0;width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:#0a1321;color:var(--text);font:inherit}button{border:0;border-radius:10px;padding:11px 16px;background:var(--cyan);color:#07131b;font-weight:750;font:inherit;cursor:pointer}button:hover{filter:brightness(1.08)}
+table{width:100%;border-collapse:collapse;margin-top:14px}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);font-size:13px}th{color:var(--muted);font-weight:500}
+.note{margin-top:22px;padding:13px 15px;border:1px solid #665b38;background:#241f13;border-radius:12px;color:#e6d7a9;font-size:12px}
+footer{color:var(--muted);font-size:11px;margin-top:26px;text-align:center}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.content-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.wrap{padding:20px 14px 40px}.tag{display:none}.form{grid-template-columns:1fr 1fr}.form button{grid-column:1/-1}.metric{font-size:26px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="top"><div><div class="brand">LIFE<span>TRACK</span></div><div class="tag">YOUR LIFE, IN DATA.</div></div><div class="pill">APERÇU • DÉMO</div></header>
+<h1>Comprends tes <em>habitudes.</em><br>Visualise tes progrès.</h1>
+<p class="intro">Un tableau de bord pour rassembler tes statistiques personnelles, au même endroit.</p>
+<div class="section-head"><h2>APERÇU GÉNÉRAL</h2><span class="muted">Données fictives · Cette semaine</span></div>
+<section class="grid" aria-label="Indicateurs de démonstration">
+<article class="panel"><div class="metric-label">Pas moyens / jour</div><div class="metric">7 420</div><div class="trend">Exemple de donnée</div></article>
+<article class="panel"><div class="metric-label">Sommeil moyen</div><div class="metric">8h 05<span class="unit"></span></div><div class="trend">Exemple de donnée</div></article>
+<article class="panel"><div class="metric-label">Activité</div><div class="metric">3h 20</div><div class="trend">Exemple de donnée</div></article>
+<article class="panel"><div class="metric-label">Lecture</div><div class="metric">2h 10</div><div class="trend">Exemple de donnée</div></article>
+</section>
+<div class="section-head"><h2>TENDANCES</h2><span class="muted">Visualisation de démonstration</span></div>
+<section class="content-grid">
+<article class="panel"><div class="metric-label">Activité quotidienne</div><div class="bars" aria-label="Graphique fictif de l'activité sur sept jours">
+<div class="bar-col"><div class="bar" style="--h:48%"></div><small>Lun</small></div><div class="bar-col"><div class="bar" style="--h:72%"></div><small>Mar</small></div><div class="bar-col"><div class="bar" style="--h:58%"></div><small>Mer</small></div><div class="bar-col"><div class="bar" style="--h:88%"></div><small>Jeu</small></div><div class="bar-col"><div class="bar" style="--h:65%"></div><small>Ven</small></div><div class="bar-col"><div class="bar" style="--h:42%"></div><small>Sam</small></div><div class="bar-col"><div class="bar" style="--h:76%"></div><small>Dim</small></div></div></article>
+<article class="panel"><div class="metric-label">Objectif fictif de lecture</div><div class="ring-wrap"><div class="ring"><strong>72%</strong></div><div class="legend"><div><span class="dot"></span>Progression démo</div><div style="margin-top:8px">Objectif illustratif</div></div></div></article>
+</section>
+<div class="section-head"><h2>AJOUTER UNE ENTRÉE TEST</h2><span class="muted">Non sauvegardée</span></div>
+<section class="panel">
+<form id="entry-form" class="form">
+<select id="kind" aria-label="Type de statistique"><option>Lecture</option><option>Activité</option><option>Sommeil</option><option>Pas</option><option>Étude</option></select>
+<input id="amount" type="number" min="0" step="any" placeholder="Valeur (ex. 30)" required aria-label="Valeur fictive">
+<input id="unit" type="text" maxlength="16" placeholder="Unité (ex. min)" required aria-label="Unité">
+<button type="submit">Ajouter</button>
+</form>
+<table><thead><tr><th>Catégorie</th><th>Valeur test</th><th>Unité</th></tr></thead><tbody id="entries"><tr id="empty"><td colspan="3" class="muted">Aucune entrée ajoutée pour le moment.</td></tr></tbody></table>
+</section>
+<div class="note">Mode démonstration : les chiffres affichés sont inventés. Les entrées ajoutées ici restent uniquement dans la page et disparaissent lorsque tu la recharges. N'entre aucune vraie donnée personnelle pour le moment.</div>
+<footer>LIFETRACK · Prototype en construction</footer>
+</main>
+<script>
+document.getElementById('entry-form').addEventListener('submit',function(e){
+ e.preventDefault();
+ const kind=document.getElementById('kind').value;
+ const amount=document.getElementById('amount').value;
+ const unit=document.getElementById('unit').value.trim();
+ if(!amount||Number(amount)<0||!unit)return;
+ const empty=document.getElementById('empty');if(empty)empty.remove();
+ const row=document.createElement('tr');
+ [kind,amount,unit].forEach(value=>{const cell=document.createElement('td');cell.textContent=value;row.appendChild(cell);});
+ document.getElementById('entries').appendChild(row);
+ this.reset();
+});
+</script>
+</body>
+</html>
